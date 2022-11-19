@@ -176,7 +176,7 @@ body {
   .big-card:nth-child(8) {
     transform: translate(10%, 3%) rotate(5deg);
     scale: 1.01;
-    background-image: url("assets/me.JPG");
+    background-image: url("me.JPG");
   }
   
   .little-card:nth-child(1) {
