@@ -180,13 +180,16 @@ body {
   }
   
   .little-card:nth-child(1) {
-    background-image: url("assets/flower.JPG");  }
+    background-image: url("assets/flower.JPG");  
+  }
   
   .little-card:nth-child(3) {
-    background-image: url("assets/hiking.JPG");  }
+    background-image: url("assets/hiking.JPG");  
+  }
   
   .little-card:nth-child(5) {
-    background-image: url("assets/dog.JPG");  }
+    background-image: url("assets/dog.JPG"); 
+   }
   
   .little-card:nth-child(7) {
     background-image: url("assets/motorcycle-front.JPG");
