@@ -93,6 +93,10 @@ body {
   .text-blurb{
     pointer-events: none;
     transform:translateY(-80%);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inherit;
   }
   
   .text-group1{
@@ -102,6 +106,9 @@ body {
     transition-property:opacity;
     transition-duration:1s;
     white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inherit;
   }
   
   .text-group2{
@@ -111,6 +118,9 @@ body {
     transition-property:opacity;
     transition-duration:1s;
     white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inherit;
   }
   
   .contact-block{
