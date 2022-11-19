@@ -163,7 +163,7 @@ body {
     transform: translateX(-15%) rotate(-1deg);
     
     scale:1.01;
-    background-image: url("assets/motorcycle-back.JPG");  }
+    background-image: url("https://i.postimg.cc/dVdbtBNx/motorcycle-back.jpg");  }
   
   .big-card:nth-child(4) {
     transform: rotate(2deg);
@@ -176,23 +176,23 @@ body {
   .big-card:nth-child(8) {
     transform: translate(10%, 3%) rotate(5deg);
     scale: 1.01;
-    background-image: url("assets/me.JPG");
+    background-image: url("https://i.postimg.cc/prLvmF5n/me.jpg");
   }
   
   .little-card:nth-child(1) {
-    background-image: url("assets/flower.JPG");  
+    background-image: url("https://i.postimg.cc/wBpStmST/flower.jpg");  
   }
   
   .little-card:nth-child(3) {
-    background-image: url("assets/hiking.JPG");  
+    background-image: url("https://i.postimg.cc/DZfH6Kv9/hiking.jpg");  
   }
   
   .little-card:nth-child(5) {
-    background-image: url("assets/dog.JPG"); 
+    background-image: url("https://i.postimg.cc/0Qfx5fjs/dog.jpg"); 
    }
   
   .little-card:nth-child(7) {
-    background-image: url("assets/motorcycle-front.JPG");
+    background-image: url("https://i.postimg.cc/ZqxX6qSP/motorcycle-front.jpg");
   }
   
   .card-group:hover > .card {  
