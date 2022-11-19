@@ -101,6 +101,7 @@ body {
     transition-delay:1s;
     transition-property:opacity;
     transition-duration:1s;
+    white-space: nowrap;
   }
   
   .text-group2{
@@ -109,6 +110,7 @@ body {
     transition-delay:2s;
     transition-property:opacity;
     transition-duration:1s;
+    white-space: nowrap;
   }
   
   .contact-block{
