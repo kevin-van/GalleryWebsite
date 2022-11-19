@@ -163,7 +163,7 @@ body {
     transform: translateX(-15%) rotate(-1deg);
     
     scale:1.01;
-    background-image: url("assets/motorcycle-front.JPG");  }
+    background-image: url("assets/motorcycle-back.JPG");  }
   
   .big-card:nth-child(4) {
     transform: rotate(2deg);
@@ -189,7 +189,7 @@ body {
     background-image: url("assets/dog.JPG");  }
   
   .little-card:nth-child(7) {
-    background-image: url("assets/motorcycle-back.JPG");
+    background-image: url("assets/motorcycle-front.JPG");
   }
   
   .card-group:hover > .card {  
