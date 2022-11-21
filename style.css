@@ -95,7 +95,6 @@ body {
     transform:translateY(-80%);
     white-space: nowrap;
     text-overflow: ellipsis;
-    overflow: hidden;
     display: inherit;
   }
   
@@ -107,7 +106,6 @@ body {
     transition-duration:1s;
     white-space: nowrap;
     text-overflow: ellipsis;
-    overflow: hidden;
     display: inherit;
   }
   
@@ -119,7 +117,6 @@ body {
     transition-duration:1s;
     white-space: nowrap;
     text-overflow: ellipsis;
-    overflow: hidden;
     display: inherit;
   }
   
@@ -175,7 +172,8 @@ body {
     transform: translateX(-15%) rotate(-1deg);
     
     scale:1.01;
-    background-image: url("https://i.postimg.cc/dVdbtBNx/motorcycle-back.jpg");  }
+    /* background-image: url(""); */
+  }
   
   .big-card:nth-child(4) {
     transform: rotate(2deg);
