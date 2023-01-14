@@ -204,7 +204,8 @@ body {
           var(--skyblue)
         );
         background-size: 200%;
-        -webkit-background-clip: text;
+        //causing errors so commented out but its for coloured text
+        // -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         white-space: nowrap;
       }
