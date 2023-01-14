@@ -205,8 +205,8 @@ body {
         );
         background-size: 200%;
         //causing errors so commented out but its for coloured text
-        // background-clip: text;
-        // -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         white-space: nowrap;
       }
