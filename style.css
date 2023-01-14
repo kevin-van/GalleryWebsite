@@ -182,7 +182,6 @@ body .container section h1 > .colour {
           animation: background-pan 3s linear infinite;
   background: linear-gradient(to right, var(--skyblue), var(--mintgreen), var(--orange), var(--skyblue));
   background-size: 200%;
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
