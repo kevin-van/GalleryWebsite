@@ -15,7 +15,7 @@ function test() {
       y.style.opacity = '1';
       
     } else {
-      x.style.transform = 'scale(1) translateX(-37.5%)';
+      x.style.transform = 'scale(1) translate(-37.5%, -12.5%)';
       x.style.backgroundImage = "none";
       x.style.boxShadow = "-2vmin 2vmin 3vmin rgba(0, 0, 0, 0.4";
       x.style.width = '80vw';
