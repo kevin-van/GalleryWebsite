@@ -1,0 +1,348 @@
+:root {
+  --orange: rgb(255, 102, 25);
+  --skyblue: rgb(25, 178, 255);
+  --mintgreen: rgb(128, 255, 170);
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
+body {
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+
+  html {
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ff0000;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+
+    section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      scroll-snap-align: start;
+
+      &:nth-of-type(1) {
+        background-color: rgb(8, 8, 8);
+      }
+
+      &:nth-of-type(2) {
+        background-color: rgb(13, 13, 13);
+      }
+
+      #bigcard1 {
+        transition: transform 800ms cubic-bezier(0.05, 0.43, 0.25, 0.95), width 1s ease-in-out, height 1s ease-in-out;
+      }
+
+      h1 {
+        color: white;
+        font-family: "Rubik", sans-serif;
+        font-size: 2em;
+        font-weight: 400;
+        margin: 0px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h2 {
+        font-family: "Rubik", sans-serif;
+        color: black;
+        font-size: 2em;
+        font-weight: 400;
+        margin: 0px;
+        align-items: center;
+      }
+
+      h3 {
+        font-family: "Rubik", sans-serif;
+        color: white;
+        font-size: 1.8em;
+        font-weight: 200;
+        margin: 0px;
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 3vmin;
+        transition: background-color 400ms, border-color 400ms;
+      }
+
+      a:link {
+        text-decoration: none;
+      }
+
+      a:visited {
+        text-decoration: none;
+      }
+
+      a:active {
+        text-decoration: none;
+      }
+
+      a.contact-block:hover {
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: 0.5px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .card-groups,
+      .card-group,
+      .card {
+        aspect-ratio: 5 / 7;
+      }
+
+      .card-groups,
+      .card-group,
+      .big-card {
+        width: 45vmin;
+      }
+
+      .card-group {
+        position: relative;
+      }
+
+      .card {
+        background-color: rgba(50, 50, 50, 1);
+        position: absolute;
+        transition: transform 800ms cubic-bezier(0.05, 0.43, 0.25, 0.95),
+          box-shadow 0.25s linear;
+        box-shadow: -2vmin 2vmin 3vmin rgba(0, 0, 0, 0.4);
+        background-position: center;
+        background-size: cover;
+      }
+
+      .big-card {
+        border-radius: 1vmin;
+      }
+
+      .little-card {
+        box-shadow: -1vmin 1vmin 2vmin rgba(0, 0, 0, 0.5);
+        width: 30vmin;
+        border-radius: 2vmin;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+
+      .text-blurb {
+        pointer-events: none;
+        transform: translateY(-80%);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: inherit;
+      }
+
+      .text-group1 {
+        transform: translate(-4vw, 50%);
+        opacity: 1;
+        transition-delay: 1s;
+        transition-property: opacity;
+        transition-duration: 1s;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: inherit;
+      }
+
+      .text-group2 {
+        transform: translate(-3vw, -50%);
+        opacity: 0;
+        transition-delay: 0s;
+        transition-property: opacity;
+        transition-duration: 1s;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: inherit;
+      }
+
+      .text-group3 {
+        transform: transalteY(-5vh);
+      }
+
+      .text-group4 {
+        transform: translateY(-25vh);
+      }
+
+      .text-card {
+        display: relative;
+      }
+
+      h1 > .colour {
+        animation: background-pan 3s linear infinite;
+        background: linear-gradient(
+          to right,
+          var(--skyblue),
+          var(--mintgreen),
+          var(--orange),
+          var(--skyblue)
+        );
+        background-size: 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        white-space: nowrap;
+      }
+
+      .contact-block {
+        height: 30%;
+        width: 90%;
+        object-fit: contain;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 3vmin;
+        transform: translate(2.5%, 2.5%);
+        margin: 1.5%;
+        cursor: pointer;
+        align-items: center;
+        display: inline-flex;
+      }
+
+      img {
+        top: 0;
+        bottom: 0;
+      }
+
+      .contact-image {
+        margin: 5%;
+        height: 80%; /* or any custom size */
+      }
+
+      .resume-block {
+        width: 100%;
+        height: 100%;
+
+        border: inherit;
+        border-radius: inherit;
+        cursor: pointer;
+        position: absolute;
+      }
+
+      .big-card:nth-child(2) {
+        transform: translateX(-15%) rotate(-1deg);
+        scale: 1.01;
+        /* background-image: url(""); */
+      }
+
+      .big-card:nth-child(4) {
+        transform: rotate(2deg);
+      }
+
+      .big-card:nth-child(6) {
+        transform: translateX(-6%) rotate(-3deg);
+        background-image: url("https://i.postimg.cc/FRVYXTvs/Screenshot-20230110-075952.png");
+      }
+
+      .big-card:nth-child(8) {
+        transform: translate(10%, 3%) rotate(5deg);
+        scale: 1.01;
+
+        background-image: url("https://i.postimg.cc/ZqxX6qSP/motorcycle-front.jpg");
+      }
+
+      .little-card:nth-child(1) {
+        background-image: url("https://i.postimg.cc/wBpStmST/flower.jpg");
+      }
+
+      .little-card:nth-child(3) {
+        background-image: url("https://i.postimg.cc/DZfH6Kv9/hiking.jpg");
+      }
+
+      .little-card:nth-child(5) {
+        background-image: url("https://i.postimg.cc/0Qfx5fjs/dog.jpg");
+      }
+
+      .little-card:nth-child(7) {
+        background-image: url("https://i.postimg.cc/ZqxX6qSP/motorcycle-front.jpg");
+      }
+
+      .card-group:hover > .big-card:nth-child(2) {
+        transform: translate(-90%, 16%) rotate(-24deg);
+      }
+
+      .big-card:nth-child(2):hover {
+        box-shadow: -2vmin 2vmin 3vmin rgba(255, 255, 255, 0.4);
+      }
+
+      .card-group:hover > .big-card:nth-child(4) {
+        transform: translate(-35%, 4%) rotate(-8deg);
+      }
+
+      .big-card:nth-child(4):hover {
+        box-shadow: -2vmin 2vmin 3vmin rgba(255, 0, 0, 0.4);
+      }
+
+      .card-group:hover > .big-card:nth-child(6) {
+        transform: translate(25%, 4%) rotate(8deg);
+      }
+
+      .big-card:nth-child(6):hover {
+        box-shadow: -2vmin 2vmin 3vmin rgba(102, 153, 255, 0.4);
+      }
+
+      .card-group:hover > .big-card:nth-child(8) {
+        transform: translate(90%, 16%) rotate(22deg);
+      }
+
+      .big-card:nth-child(8):hover {
+        box-shadow: -2vmin 2vmin 3vmin rgba(149, 255, 128, 0.4);
+        cursor: pointer;
+      }
+
+      .card-group:hover > .little-card:nth-child(1) {
+        transform: translate(200%, -100%) rotate(-15deg);
+      }
+
+      .card-group:hover > .little-card:nth-child(3) {
+        transform: translate(190%, 20%) rotate(15deg);
+      }
+
+      .card-group:hover > .little-card:nth-child(5) {
+        transform: translate(-300%, -100%) rotate(15deg);
+      }
+
+      .card-group:hover > .little-card:nth-child(7) {
+        transform: translate(-300%, 30%) rotate(-15deg);
+      }
+
+      .card-group:hover > .text-blurb > .text-group1 {
+        opacity: 0;
+        transition-delay: 0s;
+        transition-property: opacity;
+        transition-duration: 1s;
+      }
+
+      .card-group:hover > .text-blurb > .text-group2 {
+        opacity: 1;
+        transition-delay: 1s;
+        transition-property: opacity;
+        transition-duration: 1s;
+      }
+    }
+  }
+}
