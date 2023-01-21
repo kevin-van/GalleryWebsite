@@ -18,10 +18,11 @@ body {
   margin: 0px;
   height: 100vh;
   width: 100vw;
+  min-height: 100%;
+  overflow: hidden;
 
   html {
-    overflow: scroll;
-    overflow-x: hidden;
+    height: 100%;
   }
 
   ::-webkit-scrollbar {
@@ -35,8 +36,7 @@ body {
   .container {
     width: 100%;
     height: 100%;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+    overflow: hidden;
 
     section {
       display: flex;
@@ -51,12 +51,16 @@ body {
         background-color: rgb(8, 8, 8);
       }
 
-      &:nth-of-type(2) {
-        background-color: rgb(13, 13, 13);
-      }
-
       #bigcard1 {
-        transition: transform 800ms cubic-bezier(0.05, 0.43, 0.25, 0.95), width 1s ease-in-out, height 1s ease-in-out;
+        transition: transform 800ms cubic-bezier(0.05, 0.43, 0.25, 0.95),
+          width 1s ease-in-out, height 1s ease-in-out,
+          800ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
+      }
+      
+      #projectcard1 {
+                transition: transform 800ms cubic-bezier(0.05, 0.43, 0.25, 0.95),
+          width 1s ease-in-out, height 1s ease-in-out,
+          800ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
       }
 
       h1 {
@@ -67,25 +71,48 @@ body {
         margin: 0px;
         padding: 20px;
         text-align: center;
+        
       }
 
       h2 {
         font-family: "Rubik", sans-serif;
-        color: black;
+        color: white;
         font-size: 2em;
         font-weight: 400;
         margin: 0px;
         align-items: center;
+          text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
+               1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
       }
 
       h3 {
         font-family: "Rubik", sans-serif;
         color: white;
-        font-size: 1.8em;
-        font-weight: 200;
+        font-size: 3em;
+        font-weight: 200, underline;
         margin: 0px;
         text-align: center;
       }
+
+      h1 > .colour {
+        animation: background-pan 3s linear infinite;
+        background: linear-gradient(
+          to right,
+          var(--skyblue),
+          var(--mintgreen),
+          var(--orange),
+          var(--skyblue)
+        );
+        background-size: 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        white-space: nowrap;
+      }
+
+      h2 > .person {
+        color: blue;
+      }
+
       a {
         text-decoration: none;
         background-color: rgba(0, 0, 0, 0.1);
@@ -129,17 +156,30 @@ body {
       }
 
       .card {
-        background-color: rgba(50, 50, 50, 1);
+        background-color: rgba(30, 30, 30, 1);
         position: absolute;
         transition: transform 800ms cubic-bezier(0.05, 0.43, 0.25, 0.95),
-          box-shadow 0.25s linear;
+          box-shadow 0.25s linear, 800ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
         box-shadow: -2vmin 2vmin 3vmin rgba(0, 0, 0, 0.4);
         background-position: center;
         background-size: cover;
       }
 
       .big-card {
+        overflow: hidden;
         border-radius: 1vmin;
+      }
+
+      .misc-card {
+        box-shadow: -1vmin 1vmin 2vmin rgba(0, 0, 0, 0.5);
+        width: 20vmin;
+        border-radius: 2vmin;
+        left: 50%;
+        top: 50%;
+        transition: transform 800ms cubic-bezier( 0.47, 0.14, 0.45, 0.85 );
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        position: absolute;
       }
 
       .little-card {
@@ -173,41 +213,20 @@ body {
 
       .text-group2 {
         transform: translate(-3vw, -50%);
-        opacity: 0;
-        transition-delay: 0s;
         transition-property: opacity;
         transition-duration: 1s;
+        opacity: 0;
         white-space: nowrap;
         text-overflow: ellipsis;
         display: inherit;
       }
 
       .text-group3 {
-        transform: transalteY(-5vh);
-      }
-
-      .text-group4 {
-        transform: translateY(-25vh);
-      }
-
-      .text-card {
-        display: relative;
-      }
-
-      h1 > .colour {
-        animation: background-pan 3s linear infinite;
-        background: linear-gradient(
-          to right,
-          var(--skyblue),
-          var(--mintgreen),
-          var(--orange),
-          var(--skyblue)
-        );
-        background-size: 200%;
-        //causing errors so commented out but its for coloured text
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        white-space: nowrap;
+        pointer-events: none;
+        transition-property: opacity;
+        transition-duration: 1s;
+        transform: translateY(15%);
+        opacity: 0;
       }
 
       .contact-block {
@@ -223,6 +242,21 @@ body {
         align-items: center;
         display: inline-flex;
       }
+      
+        .github-block {
+        height: 60%;
+        width: 90%;
+        object-fit: contain;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 3vmin;
+        transform: translate(2.5%, 2.5%);
+        margin: 1.5%;
+        cursor: pointer;
+        align-items: center;
+        text-align: center;
+        display: block;
+      }
 
       img {
         top: 0;
@@ -232,6 +266,11 @@ body {
       .contact-image {
         margin: 5%;
         height: 80%; /* or any custom size */
+      }
+      
+      .github-image {
+        margin: 5%;
+        height: 40%; /* or any custom size */
       }
 
       .resume-block {
@@ -244,91 +283,203 @@ body {
         position: absolute;
       }
 
-      .big-card:nth-child(2) {
+      .big-card:nth-child(15) {
         transform: translateX(-15%) rotate(-1deg);
         scale: 1.01;
         /* background-image: url(""); */
       }
 
-      .big-card:nth-child(4) {
+      .big-card:nth-child(17) {
         transform: rotate(2deg);
       }
 
-      .big-card:nth-child(6) {
+      .big-card:nth-child(19) {
         transform: translateX(-6%) rotate(-3deg);
         background-image: url("https://i.postimg.cc/FRVYXTvs/Screenshot-20230110-075952.png");
       }
 
-      .big-card:nth-child(8) {
+      .big-card:nth-child(21) {
         transform: translate(10%, 3%) rotate(5deg);
         scale: 1.01;
 
         background-image: url("https://i.postimg.cc/ZqxX6qSP/motorcycle-front.jpg");
       }
 
-      .little-card:nth-child(1) {
+      .little-card:nth-child(14) {
         background-image: url("https://i.postimg.cc/wBpStmST/flower.jpg");
       }
 
-      .little-card:nth-child(3) {
+      .little-card:nth-child(16) {
         background-image: url("https://i.postimg.cc/DZfH6Kv9/hiking.jpg");
       }
 
-      .little-card:nth-child(5) {
+      .little-card:nth-child(18) {
         background-image: url("https://i.postimg.cc/0Qfx5fjs/dog.jpg");
       }
 
-      .little-card:nth-child(7) {
+      .little-card:nth-child(20) {
         background-image: url("https://i.postimg.cc/ZqxX6qSP/motorcycle-front.jpg");
       }
 
-      .card-group:hover > .big-card:nth-child(2) {
-        transform: translate(-90%, 16%) rotate(-24deg);
+      .misc-card:nth-child(1) {
+        transform: translate(-45vw, 9vh) rotate(3deg);
       }
 
-      .big-card:nth-child(2):hover {
+      .misc-card:nth-child(2) {
+        transform: translate(-42vw, -38vh) rotate(-8deg);
+      }
+
+      .misc-card:nth-child(3) {
+        transform: translate(-30vw, 30vh) rotate(-4deg);
+      }
+
+      .misc-card:nth-child(4) {
+        transform: translate(-25vw, -10vh) rotate(-10deg);
+      }
+
+      .misc-card:nth-child(5) {
+        transform: translate(-25vw, -50vh) rotate(6deg);
+      }
+
+      .misc-card:nth-child(6) {
+        transform: translate(-12vw, 12vw) rotate(7deg);
+      }
+
+      .misc-card:nth-child(7) {
+        transform: translate(-5vw, -70vh) rotate(-7deg);
+      }
+
+      .misc-card:nth-child(8) {
+        transform: translate(6vw, 18vw) rotate(-9deg);
+      }
+
+      .misc-card:nth-child(9) {
+        transform: translate(19vw, 0vw) rotate(9deg);
+      }
+
+      .misc-card:nth-child(10) {
+        transform: translate(15vw, -20vw) rotate(-5deg);
+      }
+
+      .misc-card:nth-child(11) {
+        transform: translate(30vw, -30vw) rotate(5deg);
+      }
+
+      .misc-card:nth-child(12) {
+        transform: translate(38vw, -10vw) rotate(-1deg);
+      }
+
+      .misc-card:nth-child(13) {
+        transform: translate(32vw, 12vw) rotate(-7deg);
+      }
+
+      .card-group:hover > .big-card:nth-child(15) {
+        transform: translate(-90%, 16%) rotate(-20deg);
+      }
+
+      .big-card:nth-child(15):hover {
         box-shadow: -2vmin 2vmin 3vmin rgba(255, 255, 255, 0.4);
+        scale: 1.05;
+        z-index: 1;
       }
 
-      .card-group:hover > .big-card:nth-child(4) {
+      .card-group:hover > .big-card:nth-child(17) {
         transform: translate(-35%, 4%) rotate(-8deg);
       }
 
-      .big-card:nth-child(4):hover {
-        box-shadow: -2vmin 2vmin 3vmin rgba(255, 0, 0, 0.4);
+      .big-card:nth-child(17):hover {
+        box-shadow: -2vmin 2vmin 3vmin rgba(255, 255, 255, 0.4);
+        scale: 1.05;
+        z-index: 1;
       }
 
-      .card-group:hover > .big-card:nth-child(6) {
+      .card-group:hover > .big-card:nth-child(19) {
         transform: translate(25%, 4%) rotate(8deg);
       }
 
-      .big-card:nth-child(6):hover {
-        box-shadow: -2vmin 2vmin 3vmin rgba(102, 153, 255, 0.4);
+      .big-card:nth-child(19):hover {
+        box-shadow: -2vmin 2vmin 3vmin rgba(255, 255, 255, 0.4);
+        scale: 1.05;
+        z-index: 1;
       }
 
-      .card-group:hover > .big-card:nth-child(8) {
+      .card-group:hover > .big-card:nth-child(21) {
         transform: translate(90%, 16%) rotate(22deg);
       }
 
-      .big-card:nth-child(8):hover {
-        box-shadow: -2vmin 2vmin 3vmin rgba(149, 255, 128, 0.4);
+      .big-card:nth-child(21):hover {
+        box-shadow: -2vmin 2vmin 3vmin rgba(255, 255, 255, 0.4);
+        scale: 1.05;
         cursor: pointer;
+        z-index: 1;
       }
 
-      .card-group:hover > .little-card:nth-child(1) {
+      .card-group:hover > .little-card:nth-child(14) {
         transform: translate(200%, -100%) rotate(-15deg);
       }
 
-      .card-group:hover > .little-card:nth-child(3) {
+      .card-group:hover > .little-card:nth-child(16) {
         transform: translate(190%, 20%) rotate(15deg);
       }
 
-      .card-group:hover > .little-card:nth-child(5) {
+      .card-group:hover > .little-card:nth-child(18) {
         transform: translate(-300%, -100%) rotate(15deg);
       }
 
-      .card-group:hover > .little-card:nth-child(7) {
+      .card-group:hover > .little-card:nth-child(20) {
         transform: translate(-300%, 30%) rotate(-15deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(1) {
+        transform: translate(-48vw, 14vh) rotate(3deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(2) {
+        transform: translate(-47vw, -41vh) rotate(-8deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(3) {
+        transform: translate(-33vw, 33vh) rotate(-4deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(4) {
+        transform: translate(-30vw, -10vh) rotate(-10deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(5) {
+        transform: translate(-28vw, -53vh) rotate(6deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(6) {
+        transform: translate(-13svw, 17vw) rotate(7deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(7) {
+        transform: translate(-5vw, -73vh) rotate(-7deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(8) {
+        transform: translate(9vw, 21vw) rotate(-9deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(9) {
+        transform: translate(22vw, 0vw) rotate(9deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(10) {
+        transform: translate(18vw, -24vw) rotate(-5deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(11) {
+        transform: translate(33vw, -33vw) rotate(5deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(12) {
+        transform: translate(41vw, -13vw) rotate(-1deg);
+      }
+
+      .card-group:hover > .misc-card:nth-child(13) {
+        transform: translate(35vw, 15vw) rotate(-7deg);
       }
 
       .card-group:hover > .text-blurb > .text-group1 {
