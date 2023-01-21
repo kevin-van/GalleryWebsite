@@ -89,7 +89,6 @@ function projectcard(){
 function personcard() {
   if (x.value == "true") {
     personcardclose();
-    c.addEventListener("click", projectcard());
   } else {
     personcardopen();
   }
