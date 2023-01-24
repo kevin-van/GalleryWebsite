@@ -56,9 +56,9 @@ body {
           width 1s ease-in-out, height 1s ease-in-out,
           800ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
       }
-      
+
       #projectcard1 {
-                transition: transform 800ms cubic-bezier(0.05, 0.43, 0.25, 0.95),
+        transition: transform 800ms cubic-bezier(0.05, 0.43, 0.25, 0.95),
           width 1s ease-in-out, height 1s ease-in-out,
           800ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
       }
@@ -71,7 +71,14 @@ body {
         margin: 0px;
         padding: 20px;
         text-align: center;
-        
+      }
+
+      h4 {
+        color: white;
+        font-family: "Rubik", sans-serif;
+        font-size: 2.5em;
+        font-weight: 400;
+        text-align: center;
       }
 
       h2 {
@@ -81,8 +88,8 @@ body {
         font-weight: 400;
         margin: 0px;
         align-items: center;
-          text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
-               1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+        text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
+          1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
       }
 
       h3 {
@@ -153,6 +160,7 @@ body {
 
       .card-group {
         position: relative;
+        
       }
 
       .card {
@@ -176,7 +184,7 @@ body {
         border-radius: 2vmin;
         left: 50%;
         top: 50%;
-        transition: transform 800ms cubic-bezier( 0.47, 0.14, 0.45, 0.85 );
+        transition: transform 800ms cubic-bezier(0.47, 0.14, 0.45, 0.85);
         transform: translate(-50%, -50%);
         pointer-events: none;
         position: absolute;
@@ -193,32 +201,38 @@ body {
       }
 
       .text-blurb {
+        transform: translate(-39.5%,-21vh);
+        height: 50vh;
+        width: 95vw;
+        // background: orange;
         pointer-events: none;
-        transform: translateY(-80%);
+        // transform: translateY(-10vh);
         white-space: nowrap;
-        text-overflow: ellipsis;
-        display: inherit;
+        position: absolute;
+        
       }
 
       .text-group1 {
-        transform: translate(-4vw, 50%);
+        // transform: translate(-4vw, 50%);
+        height: 100%;
+        width: 100%;
         opacity: 1;
         transition-delay: 1s;
         transition-property: opacity;
         transition-duration: 1s;
-        white-space: nowrap;
         text-overflow: ellipsis;
-        display: inherit;
+        position: inherit;
       }
 
       .text-group2 {
-        transform: translate(-3vw, -50%);
+        height: 100%;
+        width: 100%;
+        // transform: translate(-3vw, -50%);
         transition-property: opacity;
         transition-duration: 1s;
         opacity: 0;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        display: inherit;
+        // text-overflow: ellipsis;
+        position: inherit;
       }
 
       .text-group3 {
@@ -242,8 +256,8 @@ body {
         align-items: center;
         display: inline-flex;
       }
-      
-        .github-block {
+
+      .github-block {
         height: 60%;
         width: 90%;
         object-fit: contain;
@@ -267,7 +281,7 @@ body {
         margin: 5%;
         height: 80%; /* or any custom size */
       }
-      
+
       .github-image {
         margin: 5%;
         height: 40%; /* or any custom size */
@@ -302,7 +316,7 @@ body {
         transform: translate(10%, 3%) rotate(5deg);
         scale: 1.01;
 
-        background-image: url("https://i.postimg.cc/ZqxX6qSP/motorcycle-front.jpg");
+        background-image: url("https://i.postimg.cc/x1L27JYn/IMG-7213.jpg");
       }
 
       .little-card:nth-child(14) {
@@ -338,7 +352,7 @@ body {
       }
 
       .misc-card:nth-child(5) {
-        transform: translate(-25vw, -50vh) rotate(6deg);
+        transform: translate(-28vw, -50vh) rotate(6deg);
       }
 
       .misc-card:nth-child(6) {
@@ -346,30 +360,26 @@ body {
       }
 
       .misc-card:nth-child(7) {
-        transform: translate(-5vw, -70vh) rotate(-7deg);
-      }
-
-      .misc-card:nth-child(8) {
         transform: translate(6vw, 18vw) rotate(-9deg);
       }
 
-      .misc-card:nth-child(9) {
+      .misc-card:nth-child(8) {
         transform: translate(19vw, 0vw) rotate(9deg);
       }
 
-      .misc-card:nth-child(10) {
-        transform: translate(15vw, -20vw) rotate(-5deg);
+      .misc-card:nth-child(9) {
+        transform: translate(18vw, -17vw) rotate(-5deg);
       }
 
-      .misc-card:nth-child(11) {
+      .misc-card:nth-child(10) {
         transform: translate(30vw, -30vw) rotate(5deg);
       }
 
-      .misc-card:nth-child(12) {
+      .misc-card:nth-child(11) {
         transform: translate(38vw, -10vw) rotate(-1deg);
       }
 
-      .misc-card:nth-child(13) {
+      .misc-card:nth-child(12) {
         transform: translate(32vw, 12vw) rotate(-7deg);
       }
 
@@ -447,7 +457,7 @@ body {
       }
 
       .card-group:hover > .misc-card:nth-child(5) {
-        transform: translate(-28vw, -53vh) rotate(6deg);
+        transform: translate(-30vw, -55vh) rotate(6deg);
       }
 
       .card-group:hover > .misc-card:nth-child(6) {
@@ -455,30 +465,26 @@ body {
       }
 
       .card-group:hover > .misc-card:nth-child(7) {
-        transform: translate(-5vw, -73vh) rotate(-7deg);
-      }
-
-      .card-group:hover > .misc-card:nth-child(8) {
         transform: translate(9vw, 21vw) rotate(-9deg);
       }
 
-      .card-group:hover > .misc-card:nth-child(9) {
+      .card-group:hover > .misc-card:nth-child(8) {
         transform: translate(22vw, 0vw) rotate(9deg);
       }
 
-      .card-group:hover > .misc-card:nth-child(10) {
-        transform: translate(18vw, -24vw) rotate(-5deg);
+      .card-group:hover > .misc-card:nth-child(9) {
+        transform: translate(20vw, -23vw) rotate(-5deg);
       }
 
-      .card-group:hover > .misc-card:nth-child(11) {
+      .card-group:hover > .misc-card:nth-child(10) {
         transform: translate(33vw, -33vw) rotate(5deg);
       }
 
-      .card-group:hover > .misc-card:nth-child(12) {
+      .card-group:hover > .misc-card:nth-child(11) {
         transform: translate(41vw, -13vw) rotate(-1deg);
       }
 
-      .card-group:hover > .misc-card:nth-child(13) {
+      .card-group:hover > .misc-card:nth-child(12) {
         transform: translate(35vw, 15vw) rotate(-7deg);
       }
 

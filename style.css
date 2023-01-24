@@ -70,6 +70,13 @@ body .container section h1 {
   padding: 20px;
   text-align: center;
 }
+body .container section h4 {
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-size: 2.5em;
+  font-weight: 400;
+  text-align: center;
+}
 body .container section h2 {
   font-family: "Rubik", sans-serif;
   color: white;
@@ -166,30 +173,30 @@ body .container section .little-card {
   pointer-events: none;
 }
 body .container section .text-blurb {
+  transform: translate(-39.5%, -21vh);
+  height: 50vh;
+  width: 95vw;
   pointer-events: none;
-  transform: translateY(-80%);
   white-space: nowrap;
-  text-overflow: ellipsis;
-  display: inherit;
+  position: absolute;
 }
 body .container section .text-group1 {
-  transform: translate(-4vw, 50%);
+  height: 100%;
+  width: 100%;
   opacity: 1;
   transition-delay: 1s;
   transition-property: opacity;
   transition-duration: 1s;
-  white-space: nowrap;
   text-overflow: ellipsis;
-  display: inherit;
+  position: inherit;
 }
 body .container section .text-group2 {
-  transform: translate(-3vw, -50%);
+  height: 100%;
+  width: 100%;
   transition-property: opacity;
   transition-duration: 1s;
   opacity: 0;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  display: inherit;
+  position: inherit;
 }
 body .container section .text-group3 {
   pointer-events: none;
@@ -262,7 +269,7 @@ body .container section .big-card:nth-child(19) {
 body .container section .big-card:nth-child(21) {
   transform: translate(10%, 3%) rotate(5deg);
   scale: 1.01;
-  background-image: url("https://i.postimg.cc/ZqxX6qSP/motorcycle-front.jpg");
+  background-image: url("https://i.postimg.cc/x1L27JYn/IMG-7213.jpg");
 }
 body .container section .little-card:nth-child(14) {
   background-image: url("https://i.postimg.cc/wBpStmST/flower.jpg");
@@ -289,30 +296,27 @@ body .container section .misc-card:nth-child(4) {
   transform: translate(-25vw, -10vh) rotate(-10deg);
 }
 body .container section .misc-card:nth-child(5) {
-  transform: translate(-25vw, -50vh) rotate(6deg);
+  transform: translate(-28vw, -50vh) rotate(6deg);
 }
 body .container section .misc-card:nth-child(6) {
   transform: translate(-12vw, 12vw) rotate(7deg);
 }
 body .container section .misc-card:nth-child(7) {
-  transform: translate(-5vw, -70vh) rotate(-7deg);
-}
-body .container section .misc-card:nth-child(8) {
   transform: translate(6vw, 18vw) rotate(-9deg);
 }
-body .container section .misc-card:nth-child(9) {
+body .container section .misc-card:nth-child(8) {
   transform: translate(19vw, 0vw) rotate(9deg);
 }
-body .container section .misc-card:nth-child(10) {
-  transform: translate(15vw, -20vw) rotate(-5deg);
+body .container section .misc-card:nth-child(9) {
+  transform: translate(18vw, -17vw) rotate(-5deg);
 }
-body .container section .misc-card:nth-child(11) {
+body .container section .misc-card:nth-child(10) {
   transform: translate(30vw, -30vw) rotate(5deg);
 }
-body .container section .misc-card:nth-child(12) {
+body .container section .misc-card:nth-child(11) {
   transform: translate(38vw, -10vw) rotate(-1deg);
 }
-body .container section .misc-card:nth-child(13) {
+body .container section .misc-card:nth-child(12) {
   transform: translate(32vw, 12vw) rotate(-7deg);
 }
 body .container section .card-group:hover > .big-card:nth-child(15) {
@@ -373,30 +377,27 @@ body .container section .card-group:hover > .misc-card:nth-child(4) {
   transform: translate(-30vw, -10vh) rotate(-10deg);
 }
 body .container section .card-group:hover > .misc-card:nth-child(5) {
-  transform: translate(-28vw, -53vh) rotate(6deg);
+  transform: translate(-30vw, -55vh) rotate(6deg);
 }
 body .container section .card-group:hover > .misc-card:nth-child(6) {
   transform: translate(-13svw, 17vw) rotate(7deg);
 }
 body .container section .card-group:hover > .misc-card:nth-child(7) {
-  transform: translate(-5vw, -73vh) rotate(-7deg);
-}
-body .container section .card-group:hover > .misc-card:nth-child(8) {
   transform: translate(9vw, 21vw) rotate(-9deg);
 }
-body .container section .card-group:hover > .misc-card:nth-child(9) {
+body .container section .card-group:hover > .misc-card:nth-child(8) {
   transform: translate(22vw, 0vw) rotate(9deg);
 }
-body .container section .card-group:hover > .misc-card:nth-child(10) {
-  transform: translate(18vw, -24vw) rotate(-5deg);
+body .container section .card-group:hover > .misc-card:nth-child(9) {
+  transform: translate(20vw, -23vw) rotate(-5deg);
 }
-body .container section .card-group:hover > .misc-card:nth-child(11) {
+body .container section .card-group:hover > .misc-card:nth-child(10) {
   transform: translate(33vw, -33vw) rotate(5deg);
 }
-body .container section .card-group:hover > .misc-card:nth-child(12) {
+body .container section .card-group:hover > .misc-card:nth-child(11) {
   transform: translate(41vw, -13vw) rotate(-1deg);
 }
-body .container section .card-group:hover > .misc-card:nth-child(13) {
+body .container section .card-group:hover > .misc-card:nth-child(12) {
   transform: translate(35vw, 15vw) rotate(-7deg);
 }
 body .container section .card-group:hover > .text-blurb > .text-group1 {
