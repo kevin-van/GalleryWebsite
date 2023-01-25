@@ -173,7 +173,7 @@ body .container section .little-card {
   pointer-events: none;
 }
 body .container section .text-blurb {
-  transform: translate(-39.5%, 0vh);
+  transform: translate(-39.5%, 50vh);
   height: 50vh;
   width: 95vw;
   pointer-events: none;
